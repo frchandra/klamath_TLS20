@@ -1,0 +1,38 @@
+/* 
+ * File:   simulasiPrinter.c
+ * Author: klamath
+ * program untuk mencari dan
+ * menampilkan harga yang dibutuhkan
+ * untuk mengeprint suatu dokumen
+ */
+#include<stdlib.h>
+#include<stdio.h>
+
+int main(int argc, char** argv){    
+    int harga;
+    char input;
+    
+    printf("masukkan jumlah halaman:");
+    scanf("%d", &harga);
+    getchar();
+    printf("apakan anda ingin print berwarna [y]/[n] (default hitam-putih):");
+    scanf("%c", &input);
+    if(input=='y'){
+        harga*=1000;        
+    }
+    else{
+        harga*=500;
+    }
+    getchar();
+    printf("ukuran kertas :\n [a] A4\n [b] A3\n [c] A2\npilih ukuran kertas (default A4) :");
+    scanf("%c", &input);
+    if(input=='b'){
+        harga*=2;
+    }
+    else if(input=='c'){
+        harga*=4;                    
+    }
+    printf("total harga = %d", harga);  
+ 
+    
+}
